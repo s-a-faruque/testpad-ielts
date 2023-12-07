@@ -1,34 +1,34 @@
+import React from 'react'
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Question from './assessment/question'
+import AnswerSheet from './assessment/answersheet'
+import { Layout, Space } from 'antd';
+import { Col, Row } from 'antd';
+
+const { Header, Footer, Content } = Layout;
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Space
+      direction="vertical"
+      size="middle"
+    >
+      <Layout>
+        <Content>
+          <Row>
+            <Col span={24}><h1>[ TLI ] IELTS Test Pad</h1></Col>
+          </Row>
+          <Row>
+            <Col span={12}><Question></Question></Col>
+            <Col span={12}><AnswerSheet></AnswerSheet></Col>
+          </Row>
+        </Content>
+        <Footer>Footer</Footer>
+      </Layout>
+    </Space>
   )
 }
 
